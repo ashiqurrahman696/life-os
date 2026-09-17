@@ -104,12 +104,11 @@ export default function Home() {
       <main className="mt-16 flex flex-col gap-12">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
-            <p className="inline-flex rounded-full border border-zinc-200 px-3 py-1 text-xs font-medium text-zinc-500 dark:border-zinc-700">Next.js · MongoDB · BetterAuth · OpenAI</p>
             <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight md:text-5xl">
               Your whole life, <span className="text-zinc-400">one OS.</span>
             </h1>
             <p className="mt-4 max-w-md text-zinc-500">
-              Tasks, calendar, notes, goals, reminders, projects, home, travel, finance, shopping, family, vault, documents, analytics, study, knowledge, vehicle, appointments, important dates, emergency info, movements — plus an AI assistant that reads your actual data to plan your day. Works instantly in demo mode — connect MongoDB + auth keys when ready.
+              Tasks, calendar, notes, goals, reminders, projects, home, travel, finance, shopping, family, vault, documents, analytics, study, knowledge, vehicle, appointments, important dates, emergency info, movements — plus an AI assistant that reads your actual data to plan your day.
             </p>
             <div className="mt-6 flex gap-3">
               <Link href="/dashboard" className="rounded-xl bg-zinc-900 px-5 py-3 text-sm font-medium text-white hover:bg-zinc-700 dark:bg-white dark:text-zinc-900">Launch LifeOS</Link>
@@ -150,10 +149,6 @@ export default function Home() {
           ))}
         </div>
       </main>
-
-      <footer className="mt-16 border-t border-zinc-200 pt-6 text-xs text-zinc-400 dark:border-zinc-800">
-        Copy <code>.env.example</code> to <code>.env.local</code> and fill MONGODB_URI, BETTER_AUTH_SECRET, GOOGLE keys and OPENAI_API_KEY for production mode.
-      </footer>
     </div>
   );
 }
