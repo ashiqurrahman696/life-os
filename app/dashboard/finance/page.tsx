@@ -48,9 +48,9 @@ export default function FinancePage() {
     <div>
       <PageHeader title="Personal Finance" subtitle="Income, expenses and spending breakdown" />
       <div className="grid grid-cols-3 gap-3">
-        <Card className="!p-4"><div className="text-xl font-bold text-green-600">+${summary.income.toLocaleString()}</div><div className="text-sm text-zinc-500">Income</div></Card>
-        <Card className="!p-4"><div className="text-xl font-bold text-red-600">−${summary.expense.toLocaleString()}</div><div className="text-sm text-zinc-500">Expenses</div></Card>
-        <Card className="!p-4"><div className={`text-xl font-bold ${summary.balance >= 0 ? "" : "text-red-600"}`}>${summary.balance.toLocaleString()}</div><div className="text-sm text-zinc-500">Balance</div></Card>
+        <Card className="!p-4"><div className="text-xl font-bold text-green-600">+Tk. {summary.income.toLocaleString()}</div><div className="text-sm text-zinc-500">Income</div></Card>
+        <Card className="!p-4"><div className="text-xl font-bold text-red-600">−Tk. {summary.expense.toLocaleString()}</div><div className="text-sm text-zinc-500">Expenses</div></Card>
+        <Card className="!p-4"><div className={`text-xl font-bold ${summary.balance >= 0 ? "" : "text-red-600"}`}>Tk. {summary.balance.toLocaleString()}</div><div className="text-sm text-zinc-500">Balance</div></Card>
       </div>
 
       <Card className="mt-4">
@@ -76,7 +76,7 @@ export default function FinancePage() {
             {Object.keys(summary.byCategory).length === 0 ? <Empty message="No expenses yet." /> :
               Object.entries(summary.byCategory).sort((a, b) => b[1] - a[1]).map(([c, v]) => (
                 <div key={c}>
-                  <div className="flex justify-between text-sm"><span className="font-medium">{c}</span><span className="text-zinc-500">${v.toLocaleString()}</span></div>
+                  <div className="flex justify-between text-sm"><span className="font-medium">{c}</span><span className="text-zinc-500">Tk. {v.toLocaleString()}</span></div>
                   <div className="mt-1 h-2 rounded-full bg-zinc-100 dark:bg-zinc-800">
                     <div className="h-2 rounded-full bg-gradient-to-r from-red-400 to-orange-400" style={{ width: `${(v / maxCat) * 100}%` }} />
                   </div>
@@ -98,7 +98,7 @@ export default function FinancePage() {
                     <div className="truncate font-medium">{t.note || t.category}</div>
                     <div className="text-xs text-zinc-500">{t.category} · {t.date}</div>
                   </div>
-                  <span className={`font-semibold ${t.kind === "income" ? "text-green-600" : ""}`}>${Number(t.amount).toLocaleString()}</span>
+                  <span className={`font-semibold ${t.kind === "income" ? "text-green-600" : ""}`}>Tk. {Number(t.amount).toLocaleString()}</span>
                   <button onClick={() => remove(t._id)} className="text-zinc-400 hover:text-red-600">✕</button>
                 </div>
               ))}
